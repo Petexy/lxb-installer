@@ -1,0 +1,44 @@
+<!--
+  An NVMe drive, on the rows of Where to install: the M.2 stick it is, seen
+  from above and laid corner to corner — the one disk here that is a bare
+  board rather than a box, so it is the one drawn long and thin, and the
+  diagonal gives it the length a board that thin needs to be read at a row's
+  size.
+
+  Three things say M.2 and no other board. The key notch cut into the
+  connector's end, at the lower left; the half-moon at the upper right where
+  the screw holds it down; and two chips standing on the board, the
+  controller and the flash beside it. The chips are bodies of their own on
+  the board's face, so each is cut round with a crevice (swollen in black,
+  laid down again in white) and the water bevels both sides of it: a chip
+  standing on a board, not a window through one — drawn as openings they read
+  as a strip of film.
+
+  Every part is turned: the board's corners, the notch's end and the chips.
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <g id="board" transform="rotate(-45 16 16)">
+      <rect x="1.4" y="10.4" width="29.2" height="11.2" rx="1.4"/>
+    </g>
+    <g id="holes" transform="rotate(-45 16 16)">
+      <rect x="-0.2" y="16.8" width="5.6" height="1.9" rx="0.95"/>
+      <circle cx="30.6" cy="16" r="2.2"/>
+    </g>
+    <g id="chips" transform="rotate(-45 16 16)">
+      <rect x="7.6" y="12.8" width="6.6" height="6.4" rx="1.1"/>
+      <rect x="16.2" y="12.8" width="9" height="6.4" rx="1.1"/>
+    </g>
+    <mask id="pierced">
+      <use href="#board" fill="#ffffff"/>
+      <use href="#holes" fill="#000000"/>
+      <use href="#chips" fill="#000000" stroke="#000000" stroke-width="1.7"/>
+      <use href="#chips" fill="#ffffff"/>
+    </mask>
+  </defs>
+  <g mask="url(#pierced)"><use href="#board" fill="#ffffff"/></g>
+</svg>

@@ -1,0 +1,114 @@
+# Maintainer: Piotr Lewandowski <piotr.petexy@gmail.com>
+
+pkgname=lxb-installer
+pkgver=@VERSION@
+pkgrel=1
+pkgdesc='The Linexin system installer in the LineXinBar design language'
+# x86_64 alone: Linexin is built for it, and the boot loaders the installer
+# sets up are the x86-64 ones (BOOTX64.EFI, refind_x64.efi, GRUB's x86_64-efi
+# and i386-pc).
+arch=('x86_64')
+url='https://github.com/Petexy/lxb-installer'
+# The program is GPL-3.0-only. The names of Time zone's places and countries it
+# carries (data/places/names.txt, compiled in) are CLDR's, under the Unicode
+# licence; the Language step's flags (data/flags/) are cut out of Noto Color
+# Emoji, under the SIL Open Font License. Both notices go beside the program's.
+license=('GPL-3.0-only' 'Unicode-3.0' 'OFL-1.1')
+# Two kinds of dependency, both real at run time.
+#
+# The window: libxkbcommon, alsa-lib and systemd-libs (libudev) are the
+# keyboard, the interface sounds and the game controllers, all three linked
+# outright, and libgcc is Rust's unwinder. wayland is the window, opened by
+# name at run time and so invisible to anything that reads the ELF. libglvnd
+# is the EGL fallback wgpu takes on a machine with no Vulkan driver.
+# hicolor-icon-theme owns the directories the icon goes in. polkit is pkexec,
+# which raises the worker.
+#
+# The worker: every program it runs, on the live system or inside the new
+# system through arch-chroot, which is a copy of the same live system, and
+# the programs the read-only measure entry (--measure) runs on the live
+# system. Each is named by its package, as check.sh reads the source for them:
+#   util-linux      lsblk blkid findmnt sfdisk wipefs partx mount umount
+#                   mkswap runuser
+#   systemd         udevadm systemctl bootctl
+#   e2fsprogs       mkfs.ext4 dumpe2fs resize2fs e2fsck
+#   dosfstools      mkfs.fat           ntfsprogs   ntfsresize ntfscat
+#   btrfs-progs     mkfs.btrfs btrfs   efibootmgr  efibootmgr
+#   xfsprogs        mkfs.xfs
+#   arch-install-scripts  arch-chroot  rsync       rsync
+#   coreutils       du sync timeout env chown
+#   pciutils        lspci              shadow      useradd userdel groupdel
+#                                                  chpasswd passwd
+#   sudo            visudo             glibc       locale-gen
+#   pacman          pacman pacman-key  gnupg       gpgconf
+#   mkinitcpio      mkinitcpio         flatpak     flatpak
+#   grub            grub-install grub-mkconfig
+#   refind          the loader files under /usr/share/refind
+#   bash            sh
+# GRUB and rEFInd are needed offline: the boot loader is chosen by the disk
+# (GRUB for BIOS and msdos tables, rEFInd beside another system), and with no
+# internet the worker can only take them from the live system. namcap reads
+# only the ELF, so it calls every package in this second group "may not be
+# needed"; check.sh is what says they are.
+depends=('glibc' 'libgcc' 'wayland' 'libxkbcommon' 'libglvnd' 'alsa-lib' 'systemd-libs'
+         'hicolor-icon-theme' 'polkit'
+         'util-linux' 'systemd' 'e2fsprogs' 'dosfstools' 'ntfsprogs' 'btrfs-progs' 'xfsprogs'
+         'efibootmgr' 'arch-install-scripts' 'rsync' 'coreutils' 'pciutils' 'shadow' 'sudo'
+         'pacman' 'gnupg' 'mkinitcpio' 'flatpak' 'grub' 'refind' 'bash')
+# The toolkit is a *build* dependency and not a runtime one, which is the thing
+# about this package that looks like a mistake and is not. `lxb-app` is a Rust
+# path dependency: cargo compiles those sources into this binary, so what comes
+# out links no liblxb_*.so at all and runs on a live system that has never
+# heard of the toolkit. It is versioned all the same — this is built against
+# one release of the design language, not against whichever is lying about.
+makedepends=('cargo' 'pkgconf' 'lxb-toolkit>=@TOOLKIT_VERSION@')
+# Each of these is looked for before it is used, and the installation goes on
+# without it.
+optdepends=('os-prober: finding other systems beside the EFI partition for the boot menu'
+            "dconf: compiling GNOME's settings again without the live session's own"
+            'networkmanager: asking NetworkManager whether the internet answers'
+            "xdg-user-dirs: making the new account's folders during installation"
+            'terminus-font: the console font the earlier Linexin installer set'
+            'vulkan-icd-loader: draw through Vulkan rather than the EGL fallback')
+options=(!lto)
+source=("$pkgname-$pkgver.tar.gz")
+sha256sums=('@SOURCE_SHA256@')
+_lxb_installer_rustflags="${RUSTFLAGS:-}"
+
+prepare() {
+    cd "$pkgname-$pkgver"
+    export RUSTUP_TOOLCHAIN=stable
+    cargo fetch --locked --target "$(rustc -vV | sed -n 's/^host: //p')"
+}
+
+build() {
+    cd "$pkgname-$pkgver"
+    export RUSTUP_TOOLCHAIN=stable
+    export CARGO_TARGET_DIR=target
+    export RUSTFLAGS="$_lxb_installer_rustflags --remap-path-prefix=$srcdir=/usr/src/debug/$pkgname"
+    cargo build --frozen --release
+}
+
+check() {
+    cd "$pkgname-$pkgver"
+    export RUSTUP_TOOLCHAIN=stable
+    export CARGO_TARGET_DIR=target
+    # `cargo test` already builds in the dev profile. Nothing here may pin an
+    # optimisation level: RUSTFLAGS is appended after the profile's own flags
+    # and wins. The tests are pure: no disk, no root, no network.
+    export RUSTFLAGS="$_lxb_installer_rustflags --remap-path-prefix=$srcdir=/usr/src/debug/$pkgname"
+    cargo test --frozen
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    ./packaging/install.sh \
+        --destdir "$pkgdir" \
+        --prefix /usr \
+        --target-dir target
+
+    install -Dm0644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -Dm0644 data/places/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE.places"
+    install -Dm0644 data/flags/LICENSE "$pkgdir/usr/share/licenses/$pkgname/OFL-1.1-flags"
+    install -Dm0644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}

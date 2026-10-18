@@ -1,0 +1,38 @@
+[package]
+name = "lxb-installer"
+version = "0.9.4"
+edition = "2021"
+rust-version = "1.90"
+license = "GPL-3.0-only"
+description = "The Linexin system installer in the LineXinBar design language"
+repository = "https://github.com/Petexy/lxb-installer"
+
+[workspace]
+
+[dependencies]
+# The design language, the window, the frame loop, the controllers and the
+# sounds. The path is where the `lxb-toolkit` package puts the crate sources a
+# project built against it compiles from, as in the family's other
+# applications; the toolkit is compiled in, not needed at run time.
+lxb-app = { version = "0.9.4", path = "/usr/share/lxb-toolkit/crates/lxb-app" }
+# The protocol between the interface and the root worker is JSON lines.
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# geteuid, flock, unshare, statvfs, prctl, open(O_EXCL) for the worker.
+libc = "0.2"
+
+[dev-dependencies]
+# The text shaper the toolkit's renderer measures with, for the test that
+# holds every catalog's words to the room they are drawn in without a GPU.
+# The renderer's own version (`lxb-render` asks for 0.12), so nothing new is
+# fetched: it is already in the lock file as the renderer's.
+glyphon = "0.12"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+# Rust's default, pinned: a panic in the worker must unwind, so that the
+# udisks rule a hand-made layout puts in is taken out by its guard's Drop
+# (src/worker/quiet.rs refuses to compile otherwise).
+panic = "unwind"

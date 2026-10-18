@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.petexy.lxb-installer</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only AND Unicode-3.0 AND OFL-1.1</project_license>
+
+  <name>Linexin Installer</name>
+  <name xml:lang="de">Linexin-Installer</name>
+  <name xml:lang="es">Instalador de Linexin</name>
+  <name xml:lang="fr">Installateur de Linexin</name>
+  <name xml:lang="hi">Linexin इंस्टॉलर</name>
+  <name xml:lang="pl">Instalator Linexin</name>
+  <name xml:lang="pt_BR">Instalador do Linexin</name>
+  <name xml:lang="ru">Установщик Linexin</name>
+  <name xml:lang="zh_CN">Linexin 安装程序</name>
+  <summary>Install Linexin on this computer</summary>
+  <summary xml:lang="de">Linexin auf diesem Computer installieren</summary>
+  <summary xml:lang="es">Instale Linexin en este equipo</summary>
+  <summary xml:lang="fr">Installez Linexin sur cet ordinateur</summary>
+  <summary xml:lang="hi">इस कंप्यूटर पर Linexin इंस्टॉल करें</summary>
+  <summary xml:lang="pl">Zainstaluj Linexin na tym komputerze</summary>
+  <summary xml:lang="pt_BR">Instale o Linexin neste computador</summary>
+  <summary xml:lang="ru">Установите Linexin на этот компьютер</summary>
+  <summary xml:lang="zh_CN">将 Linexin 安装到这台计算机</summary>
+
+  <description>
+    <p>
+      Linexin Installer puts Linexin on this computer, drawn in the LineXinBar
+      design language and driven from a keyboard, a pointer or a controller
+      alike.
+    </p>
+    <p>
+      It can erase a whole disk, use free space beside another system, or take
+      the place of one partition. A disk that already starts another system
+      keeps it: its boot partition is shared, never doubled.
+    </p>
+    <p>
+      Language, time zone, keyboard, desktop (Linexin, Kinexin or LineXinBar),
+      applications and the account are chosen first, and the installer's own
+      words follow the language chosen. Nothing is written until the last
+      page has shown what will be erased and asked once more.
+    </p>
+
+    <p xml:lang="de">Der Linexin-Installer bringt Linexin auf diesen Computer, im Erscheinungsbild von LineXinBar und gleichermaßen mit Tastatur, Maus oder Controller zu bedienen.</p>
+    <p xml:lang="de">Er kann einen ganzen Datenträger löschen, freien Platz neben einem anderen System nutzen oder eine Partition ersetzen. Ein Datenträger, der bereits ein anderes System startet, behält es: Seine Startpartition wird geteilt, nie verdoppelt.</p>
+    <p xml:lang="de">Sprache, Zeitzone, Tastatur, Desktop (Linexin, Kinexin oder LineXinBar), Anwendungen und das Benutzerkonto werden zuerst gewählt, und der Installer spricht sofort die gewählte Sprache. Nichts wird geschrieben, bevor die letzte Seite gezeigt hat, was gelöscht wird, und noch einmal gefragt hat.</p>
+    <p xml:lang="es">El Instalador de Linexin instala Linexin en este equipo, con la apariencia de LineXinBar y se maneja igual con teclado, ratón o mando.</p>
+    <p xml:lang="es">Puede borrar un disco entero, usar el espacio libre junto a otro sistema o ocupar el lugar de una partición. Un disco que ya arranca otro sistema lo conserva: su partición de arranque se comparte, nunca se duplica.</p>
+    <p xml:lang="es">Primero se eligen el idioma, la zona horaria, el teclado, el escritorio (Linexin, Kinexin o LineXinBar), las aplicaciones y la cuenta, y el propio instalador pasa al idioma elegido. No se escribe nada hasta que la última página muestra lo que se borrará y lo pregunta una vez más.</p>
+    <p xml:lang="fr">L'Installateur de Linexin installe Linexin sur cet ordinateur, avec l'apparence de LineXinBar, et se pilote aussi bien au clavier, à la souris qu'à la manette.</p>
+    <p xml:lang="fr">Il peut effacer un disque entier, utiliser l'espace libre à côté d'un autre système ou prendre la place d'une partition. Un disque qui démarre déjà un autre système le garde : sa partition de démarrage est partagée, jamais doublée.</p>
+    <p xml:lang="fr">La langue, le fuseau horaire, le clavier, le bureau (Linexin, Kinexin ou LineXinBar), les applications et le compte sont choisis d'abord, et l'installateur parle aussitôt la langue choisie. Rien n'est écrit avant que la dernière page ait montré ce qui sera effacé et l'ait demandé une dernière fois.</p>
+    <p xml:lang="hi">Linexin इंस्टॉलर इस कंप्यूटर पर Linexin इंस्टॉल करता है, LineXinBar के रूप-रंग में, और कीबोर्ड, माउस या कंट्रोलर से समान रूप से चलता है।</p>
+    <p xml:lang="hi">यह पूरी डिस्क मिटा सकता है, किसी दूसरे सिस्टम के पास की खाली जगह इस्तेमाल कर सकता है, या किसी एक पार्टीशन की जगह ले सकता है। जो डिस्क पहले से कोई दूसरा सिस्टम चलाती है, वह उसे बनाए रखती है: उसका बूट पार्टीशन साझा होता है, कभी दोहराया नहीं जाता।</p>
+    <p xml:lang="hi">भाषा, समय क्षेत्र, कीबोर्ड, डेस्कटॉप (Linexin, Kinexin या LineXinBar), ऐप्लिकेशन और खाता पहले चुने जाते हैं, और इंस्टॉलर तुरंत चुनी गई भाषा में बात करता है। जब तक आख़िरी पेज यह न दिखा दे कि क्या मिटेगा और एक बार फिर न पूछ ले, तब तक कुछ भी लिखा नहीं जाता।</p>
+    <p xml:lang="pl">Instalator Linexin instaluje Linexin na tym komputerze, w stylu LineXinBar, i obsługuje się go równie dobrze klawiaturą, myszą, jak i kontrolerem.</p>
+    <p xml:lang="pl">Może wyczyścić cały dysk, użyć wolnego miejsca obok innego systemu albo zająć miejsce jednej partycji. Dysk, który już uruchamia inny system, zachowuje go: jego partycja rozruchowa jest współdzielona, nigdy podwajana.</p>
+    <p xml:lang="pl">Najpierw wybiera się język, strefę czasową, klawiaturę, pulpit (Linexin, Kinexin lub LineXinBar), aplikacje i konto, a sam instalator od razu mówi w wybranym języku. Nic nie zostaje zapisane, dopóki ostatnia strona nie pokaże, co zostanie usunięte, i nie zapyta jeszcze raz.</p>
+    <p xml:lang="pt_BR">O Instalador do Linexin instala o Linexin neste computador, com a aparência do LineXinBar, e é usado igualmente com teclado, mouse ou controle.</p>
+    <p xml:lang="pt_BR">Ele pode apagar um disco inteiro, usar o espaço livre ao lado de outro sistema ou ocupar o lugar de uma partição. Um disco que já inicia outro sistema o mantém: sua partição de inicialização é compartilhada, nunca duplicada.</p>
+    <p xml:lang="pt_BR">Idioma, fuso horário, teclado, área de trabalho (Linexin, Kinexin ou LineXinBar), aplicativos e a conta são escolhidos primeiro, e o próprio instalador passa a falar o idioma escolhido. Nada é gravado até que a última página mostre o que será apagado e pergunte mais uma vez.</p>
+    <p xml:lang="ru">Установщик Linexin устанавливает Linexin на этот компьютер, в оформлении LineXinBar, и одинаково управляется клавиатурой, мышью или контроллером.</p>
+    <p xml:lang="ru">Он может стереть весь диск, занять свободное место рядом с другой системой или встать на место одного раздела. Диск, с которого уже запускается другая система, сохраняет её: её загрузочный раздел используется совместно и никогда не дублируется.</p>
+    <p xml:lang="ru">Сначала выбираются язык, часовой пояс, клавиатура, рабочий стол (Linexin, Kinexin или LineXinBar), приложения и учётная запись, и сам установщик сразу переходит на выбранный язык. Ничего не записывается, пока последняя страница не покажет, что будет стёрто, и не спросит ещё раз.</p>
+    <p xml:lang="zh_CN">Linexin 安装程序将 Linexin 安装到这台计算机上，采用 LineXinBar 的外观，键盘、鼠标或手柄都能同样操作。</p>
+    <p xml:lang="zh_CN">它可以清除整个磁盘、使用另一个系统旁边的空闲空间，或取代某一个分区。已经能启动另一个系统的磁盘会保留该系统：它的启动分区会被共用，绝不会重复创建。</p>
+    <p xml:lang="zh_CN">先选择语言、时区、键盘、桌面（Linexin、Kinexin 或 LineXinBar）、应用程序和账户，安装程序本身会立即改用所选的语言。在最后一页显示将被清除的内容并再次确认之前，不会写入任何内容。</p>
+  </description>
+
+  <launchable type="desktop-id">lxb-installer.desktop</launchable>
+  <provides>
+    <binary>lxb-installer</binary>
+  </provides>
+
+  <categories>
+    <category>System</category>
+    <category>Settings</category>
+  </categories>
+
+  <developer id="io.github.petexy">
+    <name>Piotr Lewandowski</name>
+  </developer>
+
+  <url type="homepage">https://github.com/Petexy/lxb-installer</url>
+  <url type="bugtracker">https://github.com/Petexy/lxb-installer/issues</url>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.9.4" type="development" date="2026-10-11">
+      <description>
+        <p>
+          The first release. It does everything the earlier Linexin installer
+          did, in the LineXinBar design language and from a controller as well
+          as a keyboard and pointer.
+        </p>
+        <p>
+          It also installs on older computers that start without UEFI, offers
+          LineXinBar as a desktop beside Linexin and Kinexin, and shares the
+          boot partition a disk already has instead of adding a second one.
+        </p>
+        <p>
+          This release shares its version with LineXinBar, lxb-toolkit and
+          CEDM.
+        </p>
+      </description>
+    </release>
+  </releases>
+  <languages>
+    <lang>en</lang>
+    <lang>de</lang>
+    <lang>es</lang>
+    <lang>fr</lang>
+    <lang>hi</lang>
+    <lang>pl</lang>
+    <lang>pt_BR</lang>
+    <lang>ru</lang>
+    <lang>zh_CN</lang>
+  </languages>
+</component>

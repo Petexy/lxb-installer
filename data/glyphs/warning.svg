@@ -1,0 +1,25 @@
+<!--
+  Warning: something is still missing before this can go on — the mark in
+  front of what Partitions' foot says Continue needs.
+
+  The triangle every road and every system draws a warning in, its corners
+  rounded as the set's are, and an exclamation mark cut out of it: a bar
+  and a dot, each apart from the edge by more than the bevel is deep, so the
+  triangle keeps a face of its own round them.
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <polygon id="sign" points="16,6.2 27.6,26 4.4,26" stroke-width="4.2"
+             stroke-linejoin="round"/>
+    <mask id="pierced">
+      <use href="#sign" fill="#ffffff" stroke="#ffffff"/>
+      <rect x="14.5" y="11.6" width="3" height="8.6" rx="1.5" fill="#000000"/>
+      <circle cx="16" cy="23.4" r="1.75" fill="#000000"/>
+    </mask>
+  </defs>
+  <g mask="url(#pierced)"><use href="#sign" fill="#ffffff" stroke="#ffffff"/></g>
+</svg>

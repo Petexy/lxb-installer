@@ -1,0 +1,19 @@
+<!--
+  Free space: room on a disk with nothing in it, and something to be put
+  there — the row that puts Linexin in space nothing uses and erases nothing.
+
+  An outline broken into dashes, which is how room that is not there yet is
+  drawn wherever room is drawn, and a plus in it, which says something is
+  added. Each dash is a body of its own, as wide as the bevel is deep so it
+  keeps a face of its own.
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="4.2" y="6.4" width="23.6" height="19.2" rx="3.6" fill="none" stroke="#ffffff"
+        stroke-width="2.4" stroke-dasharray="4.4 2.8" stroke-linecap="round"/>
+  <rect x="14.7" y="11.2" width="2.6" height="9.6" rx="1.3" fill="#ffffff"/>
+  <rect x="11.2" y="14.7" width="9.6" height="2.6" rx="1.3" fill="#ffffff"/>
+</svg>

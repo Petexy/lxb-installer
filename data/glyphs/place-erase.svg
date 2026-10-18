@@ -1,0 +1,30 @@
+<!--
+  Erase this disk: an eraser rubbing out a line, on the row that puts
+  Linexin on the whole of a disk and everything on it goes.
+
+  The rubber is the end that wipes and the sleeve the rest; they are two
+  parts of one eraser, so the rubber is cut off the sleeve by a crevice and
+  the water bevels both sides of it. The line under it is what it has wiped.
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <g id="eraser" transform="rotate(45 17 13.6)">
+      <rect id="whole" x="12" y="1.8" width="10" height="23.6" rx="2.4"/>
+    </g>
+    <g id="tip" transform="rotate(45 17 13.6)">
+      <rect x="12" y="16.4" width="10" height="9" rx="2.4"/>
+    </g>
+    <rect id="wiped" x="3.4" y="26.6" width="14" height="2.4" rx="1.2"/>
+    <g id="bead"><use href="#eraser"/><use href="#wiped"/></g>
+    <mask id="pierced">
+      <use href="#bead" fill="#ffffff"/>
+      <use href="#tip" fill="#000000" stroke="#000000" stroke-width="1.7"/>
+      <use href="#tip" fill="#ffffff"/>
+    </mask>
+  </defs>
+  <g mask="url(#pierced)"><use href="#bead" fill="#ffffff"/></g>
+</svg>

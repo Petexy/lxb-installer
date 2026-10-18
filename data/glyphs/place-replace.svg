@@ -1,0 +1,19 @@
+<!--
+  Replace a part: one thing taken out and another put in its place, the two
+  arrows going each way — the row that puts Linexin where a partition was and
+  what was on it goes.
+
+  Two arrows rather than a part drawn with something in it: at a row's size
+  the outline is what is read, and two arrows passing each other is the
+  outline of an exchange in every set there is.
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <g fill="#ffffff">
+    <path d="M5.2 8.4H19.6V5.2A0.8 0.8 0 0 1 20.9 4.6L28.2 10.2A0.9 0.9 0 0 1 28.2 11.6L20.9 17.2A0.8 0.8 0 0 1 19.6 16.6V13.4H5.2A1.2 1.2 0 0 1 4 12.2V9.6A1.2 1.2 0 0 1 5.2 8.4Z"/>
+    <path d="M26.8 18.6H12.4V15.4A0.8 0.8 0 0 0 11.1 14.8L3.8 20.4A0.9 0.9 0 0 0 3.8 21.8L11.1 27.4A0.8 0.8 0 0 0 12.4 26.8V23.6H26.8A1.2 1.2 0 0 0 28 22.4V19.8A1.2 1.2 0 0 0 26.8 18.6Z"/>
+  </g>
+</svg>

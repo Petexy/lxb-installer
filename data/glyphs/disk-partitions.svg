@@ -1,0 +1,31 @@
+<!--
+  Partitions: the head of Where to install's Advanced page, the disk map.
+
+  Three tiles of different widths standing side by side — a wide one, a
+  narrow one and one between — the way the page's map lays a disk out, each
+  with a band along its top, as every tile of the map wears its filesystem's
+  colour there. Each tile is a body of its own, apart from the next by a
+  gap as wide as the bevel is deep, so each keeps a face; each band is cut
+  from its tile by a crevice, and is tall enough that the bevel does not eat
+  it at a head's size. A grid of equal parts read as a table; the unequal
+  widths are what say "a disk cut up".
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <g id="tiles">
+      <rect x="2.6" y="7.4" width="12.2" height="17.2" rx="2.2"/>
+      <rect x="16.8" y="7.4" width="4.2" height="17.2" rx="1.8"/>
+      <rect x="23" y="7.4" width="6.4" height="17.2" rx="2.2"/>
+    </g>
+    <rect id="cut" x="1" y="11.2" width="30" height="1.7"/>
+    <mask id="pierced">
+      <use href="#tiles" fill="#ffffff"/>
+      <use href="#cut" fill="#000000"/>
+    </mask>
+  </defs>
+  <g mask="url(#pierced)"><use href="#tiles" fill="#ffffff"/></g>
+</svg>

@@ -1,0 +1,31 @@
+<!--
+  A memory card, on the rows of Where to install (an SD card, or the eMMC a
+  small machine keeps its system on, which the system calls by the same
+  name): the card's outline with its corner cut off, which is the one thing
+  everybody knows a memory card by.
+
+  The contacts are three slots cut through near the top, the third shorter
+  where the cut corner leaves it less room, and the notch in the left edge is
+  where the card's lock slides. Openings rather than lines, so each gets its
+  own ring of water and reads as a groove in the card.
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <path id="card" d="M9.2 3.2H19.2L25.4 9.4V26.8A2 2 0 0 1 23.4 28.8H8.6A2 2 0 0 1 6.6 26.8V5.8A2.6 2.6 0 0 1 9.2 3.2Z"/>
+    <g id="holes">
+      <rect x="10" y="6.4" width="2.2" height="6" rx="1.1"/>
+      <rect x="14" y="6.4" width="2.2" height="6" rx="1.1"/>
+      <rect x="18" y="8" width="2.2" height="4.4" rx="1.1"/>
+      <rect x="5" y="15.4" width="3.2" height="4.4" rx="1"/>
+    </g>
+    <mask id="pierced">
+      <use href="#card" fill="#ffffff"/>
+      <use href="#holes" fill="#000000"/>
+    </mask>
+  </defs>
+  <g mask="url(#pierced)"><use href="#card" fill="#ffffff"/></g>
+</svg>

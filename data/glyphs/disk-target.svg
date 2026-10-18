@@ -1,0 +1,35 @@
+<!--
+  The disk Linexin goes onto: the mark at the head of Where to install, and
+  on Review's row that goes back to it.
+
+  A drive with an arrow coming down onto it. The drive is the box every disk
+  here is drawn as when its kind does not matter — lying down, an opening for
+  its light and a slot along its face — and the arrow is the one Software's
+  carton and the shell's "Install games to" take, which is what "this is where
+  it goes" already looks like in this set. It is not any one kind of disk,
+  because the step is about choosing one; the rows under it say which kind
+  each is.
+
+  It replaces the stacked drum, which read as partitions stacked on each
+  other rather than as a disk.
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <rect id="drive" x="3" y="17.4" width="26" height="11.2" rx="2.6"/>
+    <path id="arrow" d="M14.4 3.4H17.6A1 1 0 0 1 18.6 4.4V9.4H22A0.9 0.9 0 0 1 22.6 11L16.7 16.2A1 1 0 0 1 15.3 16.2L9.4 11A0.9 0.9 0 0 1 10 9.4H13.4V4.4A1 1 0 0 1 14.4 3.4Z"/>
+    <g id="holes">
+      <circle cx="24.2" cy="23" r="1.5"/>
+      <rect x="6.4" y="21.8" width="10" height="2.4" rx="1.2"/>
+    </g>
+    <g id="bead"><use href="#drive"/><use href="#arrow"/></g>
+    <mask id="pierced">
+      <use href="#bead" fill="#ffffff"/>
+      <use href="#holes" fill="#000000"/>
+    </mask>
+  </defs>
+  <g mask="url(#pierced)"><use href="#bead" fill="#ffffff"/></g>
+</svg>

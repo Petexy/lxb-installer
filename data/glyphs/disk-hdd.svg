@@ -1,0 +1,37 @@
+<!--
+  A hard disk, on the rows of Where to install: the 3.5-inch drive with its
+  lid off, the way everybody draws one — the platter, the spindle in its
+  middle, and the arm reaching across it from its pivot in the corner.
+
+  The platter is an opening in the case and the spindle and the arm stand in
+  it, so the ring of water round the opening is the platter's edge and the
+  arm lies over it. The arm reaches halfway to the spindle: an arm that only
+  touched the platter's edge read as a nick in it at a row's size, and the
+  drive as a box with a hole in it. The pivot is a body of its own standing
+  on the case, so it is cut round with a crevice (swollen in black, laid down
+  again in white) and the arm runs out of it, over the crevice and onto the
+  platter — the arm turns on it. It stands upright where the SSD lies down,
+  so the two boxes are told apart by their outline at a row's size.
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <rect id="case" x="5.6" y="2.8" width="20.8" height="26.4" rx="2.6"/>
+    <circle id="platter" cx="16" cy="13" r="8.2"/>
+    <circle id="spindle" cx="16" cy="13" r="1.9"/>
+    <path id="arm" d="M21.4 23.8L18.3 16.5" fill="none" stroke-width="2.6" stroke-linecap="round"/>
+    <circle id="pivot" cx="21.4" cy="23.8" r="2.4"/>
+    <mask id="pierced">
+      <use href="#case" fill="#ffffff"/>
+      <use href="#platter" fill="#000000"/>
+      <use href="#spindle" fill="#ffffff"/>
+      <use href="#pivot" fill="#000000" stroke="#000000" stroke-width="1.7"/>
+      <use href="#pivot" fill="#ffffff"/>
+      <use href="#arm" stroke="#ffffff"/>
+    </mask>
+  </defs>
+  <g mask="url(#pierced)"><use href="#case" fill="#ffffff"/></g>
+</svg>

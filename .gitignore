@@ -1,0 +1,7 @@
+/target
+/artifacts
+/packaging/out
+.directory
+*.qcow2
+*.raw
+*.iso

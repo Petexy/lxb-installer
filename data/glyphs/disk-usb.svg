@@ -1,0 +1,33 @@
+<!--
+  A USB stick, on the rows of Where to install: the plug on top with its two
+  square windows, the body under it, and the hole a keyring goes through.
+
+  The plug is the metal and the body the plastic — two pieces, the body's
+  shoulder standing out round the plug's foot — so the body is cut round with
+  a crevice and the plug reads as going into it. The windows are openings and
+  get their own rings of water, which is what makes the plug a plug at the
+  size a row is drawn.
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <rect id="plug" x="10.4" y="2.4" width="11.2" height="10.6" rx="1.4"/>
+    <rect id="body" x="7.6" y="11" width="16.8" height="18.6" rx="3.4"/>
+    <g id="holes">
+      <rect x="12.6" y="4.8" width="2.4" height="2.6" rx="0.6"/>
+      <rect x="17" y="4.8" width="2.4" height="2.6" rx="0.6"/>
+      <circle cx="16" cy="25.2" r="1.7"/>
+    </g>
+    <g id="bead"><use href="#plug"/><use href="#body"/></g>
+    <mask id="pierced">
+      <use href="#bead" fill="#ffffff"/>
+      <use href="#body" fill="#000000" stroke="#000000" stroke-width="1.7"/>
+      <use href="#body" fill="#ffffff"/>
+      <use href="#holes" fill="#000000"/>
+    </mask>
+  </defs>
+  <g mask="url(#pierced)"><use href="#bead" fill="#ffffff"/></g>
+</svg>

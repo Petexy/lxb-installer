@@ -1,0 +1,32 @@
+<!--
+  This computer's name, on the row of You that asks for it.
+
+  The shell's display (setting-display.svg) with a name written on its
+  screen: two lines standing in the screen's opening, the long one and a
+  shorter one under it, the lines the shell's name card (setting-name.svg)
+  writes a name with. The lines are bodies standing in the opening and get
+  their walls from it, as the name card's openings do from the card.
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <path id="bezel" d="M4.4 4.6h23.2a2 2 0 0 1 2 2v13.6a2 2 0 0 1-2 2H4.4a2 2 0 0 1-2-2V6.6a2 2 0 0 1 2-2z"/>
+    <path id="pane" d="M5.8 7.4h20.4v11.6H5.8z"/>
+    <path id="neck" d="M13.4 22h5.2v3.8h-5.2z"/>
+    <path id="foot" d="M8.6 25.4h14.8a1.1 1.1 0 0 1 1.1 1.1v1a1.1 1.1 0 0 1-1.1 1.1H8.6a1.1 1.1 0 0 1-1.1-1.1v-1a1.1 1.1 0 0 1 1.1-1.1z"/>
+    <g id="lines">
+      <rect x="9" y="10.2" width="14" height="2.4" rx="1.2"/>
+      <rect x="9" y="14.2" width="8.6" height="2.4" rx="1.2"/>
+    </g>
+    <g id="bead"><use href="#bezel"/><use href="#neck"/><use href="#foot"/></g>
+    <mask id="pierced">
+      <use href="#bead" fill="#ffffff"/>
+      <use href="#pane" fill="#000000"/>
+      <use href="#lines" fill="#ffffff"/>
+    </mask>
+  </defs>
+  <g mask="url(#pierced)"><use href="#bead" fill="#ffffff"/><use href="#lines" fill="#ffffff"/></g>
+</svg>

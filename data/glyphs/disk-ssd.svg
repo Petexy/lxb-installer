@@ -1,0 +1,32 @@
+<!--
+  A SATA SSD, on the rows of Where to install: the 2.5-inch case it comes in,
+  lying on its long side — the hard disk stands on its short one, so the two
+  boxes are told apart by their outline before anything inside them is read.
+
+  The face is the label every such drive wears, a plate of its own on the
+  case and so cut round with a crevice; the right-hand end is the SATA
+  connector, the data port and the longer power port, cut into the case's end
+  as the two notches a drive shows there. Nothing turns inside it, which is
+  the whole difference from the hard disk beside it.
+
+  lxb:shape — the material is computed from this outline. See the shell's
+  category-games.svg, which is where it is explained.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <rect id="case" x="2.8" y="6.4" width="26.4" height="19.2" rx="2.4"/>
+    <rect id="label" x="6" y="9.6" width="16.4" height="12.8" rx="1.6"/>
+    <g id="holes">
+      <rect x="25.6" y="9.4" width="6" height="4.2" rx="1"/>
+      <rect x="25.6" y="15.6" width="6" height="7" rx="1"/>
+    </g>
+    <mask id="pierced">
+      <use href="#case" fill="#ffffff"/>
+      <use href="#holes" fill="#000000"/>
+      <use href="#label" fill="#000000" stroke="#000000" stroke-width="1.7"/>
+      <use href="#label" fill="#ffffff"/>
+    </mask>
+  </defs>
+  <g mask="url(#pierced)"><use href="#case" fill="#ffffff"/></g>
+</svg>

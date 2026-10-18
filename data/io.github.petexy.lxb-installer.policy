@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD polkit Policy Configuration 1.0//EN"
+"http://www.freedesktop.org/software/polkit/policyconfig-1.dtd">
+<!--
+  The installer's interface runs as the person and raises only the same
+  program, through pkexec, in one of two modes, each with an action of its
+  own: the worker that installs (the install action) and the measurement
+  that only reads how full the partitions are (the measure action), each
+  named by its flag as exec.argv1. pkexec picks the action whose program and
+  first argument are exactly what it was handed, so neither mode can be
+  raised under the other's question. The answer is kept for a short while
+  so that trying again after a refusal does not ask twice.
+-->
+<policyconfig>
+
+  <vendor>Linexin</vendor>
+  <vendor_url>https://github.com/Petexy/lxb-installer</vendor_url>
+  <icon_name>lxb-installer</icon_name>
+
+  <action id="io.github.petexy.lxb-installer.install">
+    <description>Install Linexin</description>
+    <description xml:lang="de">Linexin installieren</description>
+    <description xml:lang="en_GB">Install Linexin</description>
+    <description xml:lang="es">Instalar Linexin</description>
+    <description xml:lang="fr">Installer Linexin</description>
+    <description xml:lang="hi">Linexin इंस्टॉल करें</description>
+    <description xml:lang="pl">Zainstaluj Linexin</description>
+    <description xml:lang="pt_BR">Instalar o Linexin</description>
+    <description xml:lang="ru">Установить Linexin</description>
+    <description xml:lang="zh_CN">安装 Linexin</description>
+    <message>Installing Linexin changes this computer's disks, so your password is needed.</message>
+    <message xml:lang="de">Die Installation von Linexin verändert die Datenträger dieses Computers, daher wird Ihr Passwort benötigt.</message>
+    <message xml:lang="en_GB">Installing Linexin changes this computer's disks, so your password is needed.</message>
+    <message xml:lang="es">Instalar Linexin cambia los discos de este equipo, por lo que se necesita su contraseña.</message>
+    <message xml:lang="fr">L'installation de Linexin modifie les disques de cet ordinateur ; votre mot de passe est donc nécessaire.</message>
+    <message xml:lang="hi">Linexin इंस्टॉल करने से इस कंप्यूटर की डिस्क बदलती हैं, इसलिए आपका पासवर्ड चाहिए।</message>
+    <message xml:lang="pl">Instalacja Linexin zmienia dyski tego komputera, dlatego potrzebne jest Twoje hasło.</message>
+    <message xml:lang="pt_BR">Instalar o Linexin altera os discos deste computador, por isso sua senha é necessária.</message>
+    <message xml:lang="ru">Установка Linexin изменяет диски этого компьютера, поэтому нужен ваш пароль.</message>
+    <message xml:lang="zh_CN">安装 Linexin 会更改这台计算机的磁盘，因此需要您的密码。</message>
+    <defaults>
+      <allow_any>no</allow_any>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/lxb-installer</annotate>
+    <annotate key="org.freedesktop.policykit.exec.argv1">--worker</annotate>
+  </action>
+
+  <action id="io.github.petexy.lxb-installer.measure">
+    <description>Read how full this computer's disks are</description>
+    <description xml:lang="de">Belegung der Datenträger dieses Computers lesen</description>
+    <description xml:lang="en_GB">Read how full this computer's disks are</description>
+    <description xml:lang="es">Leer cuánto ocupan los discos de este equipo</description>
+    <description xml:lang="fr">Lire l'occupation des disques de cet ordinateur</description>
+    <description xml:lang="hi">इस कंप्यूटर की डिस्क कितनी भरी हैं, यह पढ़ें</description>
+    <description xml:lang="pl">Odczytaj zajętość dysków tego komputera</description>
+    <description xml:lang="pt_BR">Ler o quanto os discos deste computador estão ocupados</description>
+    <description xml:lang="ru">Узнать заполненность дисков этого компьютера</description>
+    <description xml:lang="zh_CN">读取这台计算机磁盘的占用情况</description>
+    <message>Reading how full this computer's disks are needs your password. Nothing on them is changed.</message>
+    <message xml:lang="de">Um zu lesen, wie voll die Datenträger dieses Computers sind, wird Ihr Passwort benötigt. Dabei wird nichts verändert.</message>
+    <message xml:lang="en_GB">Reading how full this computer's disks are needs your password. Nothing on them is changed.</message>
+    <message xml:lang="es">Para leer cuánto ocupan los discos de este equipo se necesita su contraseña. No se cambia nada en ellos.</message>
+    <message xml:lang="fr">Lire l'occupation des disques de cet ordinateur nécessite votre mot de passe. Rien n'y est modifié.</message>
+    <message xml:lang="hi">इस कंप्यूटर की डिस्क कितनी भरी हैं, यह पढ़ने के लिए आपका पासवर्ड चाहिए। उन पर कुछ भी नहीं बदला जाता।</message>
+    <message xml:lang="pl">Odczytanie zajętości dysków tego komputera wymaga Twojego hasła. Nic na nich nie zostanie zmienione.</message>
+    <message xml:lang="pt_BR">Ler o quanto os discos deste computador estão ocupados requer sua senha. Nada neles é alterado.</message>
+    <message xml:lang="ru">Чтобы узнать заполненность дисков этого компьютера, нужен ваш пароль. На них ничего не изменяется.</message>
+    <message xml:lang="zh_CN">读取这台计算机磁盘的占用情况需要您的密码。磁盘上的任何内容都不会被更改。</message>
+    <defaults>
+      <allow_any>no</allow_any>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/lxb-installer</annotate>
+    <annotate key="org.freedesktop.policykit.exec.argv1">--measure</annotate>
+  </action>
+
+</policyconfig>
